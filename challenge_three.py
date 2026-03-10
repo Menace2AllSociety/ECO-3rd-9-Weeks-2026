@@ -85,12 +85,14 @@ def shop_sell(inventory, gem_inventory):
     # Write your translated Python code below this line!
     pass
 
-def shop_sell(inventoryMoney, gem_inventory) {
-    print("What have you got to sell?")
+def shop_sell(inventoryMoney, gem_inventory): 
+     print("What have you got to sell?")
 
-    if(len(gem_inventory)) {
+     if(len(gem_inventory)):
         print("If ya ain't got nothing to sell, why ya bothering me?")
         return inventoryMoney
+     print("---Your Gems---")
+
     
-    }
+    
     
