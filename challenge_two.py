@@ -57,3 +57,53 @@ PROCEDURE shop_buy(inventoryMoney, inventoryPick, stockList) {
 def shop_buy(stock, inventory):
     # Write your translated Python code below this line!
     pass
+
+def shop_buy(inventoryMoney, inventoryPick, stockList): 
+     keepShopping = "y"
+    
+    while (keepShopping != "y",keepShopping != "Y"): 
+         print ("--- Items for Sale ---")
+        i = 1
+         for i in (stockList) 
+            print (i + ". " + item[1] + " - $" + item[2])
+            i = i + 1
+        
+        
+         print ("Enter the number of the item you want to buy:")
+        choice = INPUT()
+        
+         if (choice ≥ 1,choice <= len(stockList)): 
+             selectedItem = stockList[choice]
+             itemName = selectedItem[1]
+             itemPrice = selectedItem[2]
+            
+         if (inventoryMoney >= itemPrice): 
+                 (inventoryMoney == inventoryMoney - itemPrice)
+                
+                # Extract 3 characters starting at the 10th letter (1-based)
+                if ([](itemName, 10, 3) = "Enh") 
+                    inventoryPick = "good"
+                
+                elif ([](itemName, 10, 3) = "Gre") 
+                    inventoryPick = "better"
+                
+                elif ([](itemName, 10, 3) = "Sup") 
+                    inventoryPick = "best"
+                
+                
+                pop(stockList, choice)
+                print("You bought the ", itemname ,"!")
+            
+            else: 
+                 print ("You can't afford that!")
+            
+        
+        else: 
+             print ("Sorry, we don't have that.")
+        
+        
+         print ("Keep shopping? Y/N")
+         keepShopping = input()
+    
+    
+    return inventoryMoney
