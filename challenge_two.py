@@ -61,49 +61,49 @@ def shop_buy(stock, inventory):
 def shop_buy(inventoryMoney, inventoryPick, stockList): 
      keepShopping = "y"
     
-    while (keepShopping != "y",keepShopping != "Y"): 
-         print ("--- Items for Sale ---")
+     while (keepShopping != "y",keepShopping != "Y"): 
+        print ("--- Items for Sale ---")
         i = 1
-         for i in (stockList) 
-            print (i + ". " + item[1] + " - $" + item[2])
+        for i in (stockList): 
+            print (f"{i} {str(item[1])} - ${str(item[2])}")
             i = i + 1
         
         
-         print ("Enter the number of the item you want to buy:")
-        choice = INPUT()
+        print ("Enter the number of the item you want to buy:")
+        choice = input()
         
-         if (choice ≥ 1,choice <= len(stockList)): 
+        if (choice >= 1,choice <= len(stockList)): 
              selectedItem = stockList[choice]
              itemName = selectedItem[1]
              itemPrice = selectedItem[2]
             
-         if (inventoryMoney >= itemPrice): 
+        if (inventoryMoney >= itemPrice): 
                  (inventoryMoney == inventoryMoney - itemPrice)
                 
                 # Extract 3 characters starting at the 10th letter (1-based)
-                if ([](itemName, 10, 3) = "Enh") 
-                    inventoryPick = "good"
+                 if ([](itemName, 10, 3) == "Enh"): 
+                    inventoryPick = ("good")
                 
-                elif ([](itemName, 10, 3) = "Gre") 
-                    inventoryPick = "better"
+                 elif ([](itemName, 10, 3) == "Gre"): 
+                    inventoryPick = ("better")
                 
-                elif ([](itemName, 10, 3) = "Sup") 
-                    inventoryPick = "best"
+                 elif ([](itemName, 10, 3) == "Sup"): 
+                    inventoryPick = ("best")
                 
                 
-                pop(stockList, choice)
-                print("You bought the ", itemname ,"!")
+                 stockList.pop(choice)
+                 print("You bought the ",itemname,"!")
             
-            else: 
+        else: 
                  print ("You can't afford that!")
             
         
-        else: 
-             print ("Sorry, we don't have that.")
+     else: 
+        print ("Sorry, we don't have that.")
         
         
-         print ("Keep shopping? Y/N")
-         keepShopping = input()
+     print ("Keep shopping? Y/N")
+     keepShopping = input()
     
     
-    return inventoryMoney
+     return inventoryMoney
