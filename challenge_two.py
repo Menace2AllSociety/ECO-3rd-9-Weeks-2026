@@ -1,4 +1,4 @@
-# Challenge Two: The Shop Menu
+#NChallenge Two: The Shop Menu
 
 
 """
@@ -65,7 +65,7 @@ def shop_buy(inventoryMoney, inventoryPick, stockList):
         print ("--- Items for Sale ---")
         i = 1
         for i in (stockList): 
-            print (f"{i} {str(item[1])} - ${str(item[2])}")
+            print (f"{i} {str(selectedItem[1])} - ${str(selectedItem[2])}")
             i = i + 1
         
         
@@ -92,7 +92,7 @@ def shop_buy(inventoryMoney, inventoryPick, stockList):
                 
                 
                  stockList.pop(choice)
-                 print("You bought the ",itemname,"!")
+                 print("You bought the ",itemName,"!")
             
         else: 
                  print ("You can't afford that!")

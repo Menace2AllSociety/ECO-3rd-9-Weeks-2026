@@ -92,7 +92,70 @@ def shop_sell(inventoryMoney, gem_inventory):
         print("If ya ain't got nothing to sell, why ya bothering me?")
         return inventoryMoney
      print("---Your Gems---")
-
+     i = 1
+     for gem in (gem_inventory) 
+        # If the value (index 2) is 0, hide the rarity
+        if (gem[2] == 0): 
+             print (i + ". Unappraised " + gem[1])
+        else: 
+            print (i + ". " + gem[3] + " " + gem[1] + " (Value: $" + gem[2] + ")")
+        
+        i = i + 1
+    
+     print ("Enter the number of the gem you want to sell:")
+     choice = input()
+    
+     if (choice < 1 , choice > len(gem_inventory)): 
+        print("You don't have that gem! Stop wasting my time!")
+        return inventoryMoney
+    
+    
+     selectedGem = gem_inventory[choice]
+     gemName = selectedGem[1]
+     gemValue = selectedGem[2]
+     gemRarity = selectedGem[3]
+    
+     if (gemRarity == "appraised_fake"): 
+        print ("Now look here, I ain't in the business of buying fakes.")
+        return inventoryMoney
+    
+    
+     if (gemValue == 0): 
+        print ("Looks like this hasn't been appraised yet. Let me see...")
+        
+        if (gemRarity == "common"): 
+            gemValue = rand.int(2, 5)
+        elif (gemRarity == "uncommon"): 
+            gemValue ← RANDOM(7, 10)
+        elif (gemRarity == "rare"): 
+            gemValue ← RANDOM(12, 20)
+        } ELSE IF (gemRarity = "unique") {
+            gemValue ← RANDOM(25, 50)
+        } ELSE {
+            gemValue ← 0
+            gemRarity ← "appraised_fake"
+        }
+        
+        selectedGem[2] ← gemValue
+        selectedGem[3] ← gemRarity
+        gem_inventory[choice] ← selectedGem
+    }
+    
+    IF (gemRarity ≠ "appraised_fake") 
+        DISPLAY "Ah yes. I'd be willing to offer you $" + gemValue + " for that."
+        DISPLAY "Interested? Y/N"
+        accept ← INPUT()
+        
+        IF (accept = "y" OR accept = "Y") 
+            inventoryMoney ← inventoryMoney + gemValue
+            REMOVE(gem_inventory, choice)
+            DISPLAY "Transaction complete!"
+    
+     ELSE 
+        DISPLAY "Now look here, I ain't in the business of buying fakes."
+    
+    
+    return inventoryMoney
     
     
     
